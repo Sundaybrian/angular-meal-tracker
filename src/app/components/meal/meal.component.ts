@@ -33,7 +33,6 @@ export class MealComponent implements OnInit {
   editMeal(meal) {
     this.currentMeal = meal;
     this.isEdit = true;
-
   }
 
   onUpdatedMeal(meal: Meal) {
@@ -50,7 +49,6 @@ export class MealComponent implements OnInit {
 
   deleteMeal(meal: Meal) {
     if (confirm("Are You Sure You?")) {
-
       this.mealService.deleteMeal(meal);
     }
 
