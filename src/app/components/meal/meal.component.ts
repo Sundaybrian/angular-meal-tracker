@@ -9,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealComponent implements OnInit {
 
+  _meals;
+
   constructor(private mealService: MealService) { }
 
   ngOnInit() {
+    this._meals = this.mealService.getMeals();
   }
 
   onNewFood(food) {

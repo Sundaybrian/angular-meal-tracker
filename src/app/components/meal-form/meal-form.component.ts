@@ -20,7 +20,7 @@ export class MealFormComponent implements OnInit {
     details: ""
   }
 
-  constructor() { }
+  constructor(private mealService: MealService) { }
 
   ngOnInit() {
   }
@@ -29,6 +29,7 @@ export class MealFormComponent implements OnInit {
     console.log(ff);
     this.newFoodOut.emit(this.newFood);
   }
+
 
 
 }
