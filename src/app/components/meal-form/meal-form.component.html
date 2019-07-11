@@ -1,16 +1,19 @@
-<form>
+<form (ngSubmit)="submitFood(foodForm)" #foodForm='ngForm'>
   <div class="form-group">
-    <label for="fname">Food Name</label>
-    <input type="text" required placeholder="Enter Name of food..." class="form-control" name="fname" #fname>
+    <label for="fname">Food Name{{newFood.name}}</label>
+    <input type="text" required placeholder="Enter Name of food..." class="form-control" name="fname" #fname='ngModel'
+      [(ngModel)]="newFood.name">
   </div>
   <div class="form-group">
     <label for="calories">Calories</label>
-    <input type="number" required placeholder="Enter calories..." class="form-control" name="calories" #calories>
+    <input type="number" required placeholder="Enter calories..." class="form-control" name="calories"
+      #calories='ngModel' [(ngModel)]="newFood.calories">
   </div>
   <div class="form-group">
     <label for="fdetails">Food Details</label>
     <textarea type="text" required rows="3" placeholder="Enter Details of The Food..." class="form-control"
-      name="fdetails" #fdetails></textarea>
+      name="fdetails" #fdetails='ngModel' [(ngModel)]="newFood.details"></textarea>
   </div>
-  <button class="btn btn-dark btn-block">Add Food</button>
+  <button class="btn btn-dark btn-block" type="submit">Add
+    Food</button>
 </form>

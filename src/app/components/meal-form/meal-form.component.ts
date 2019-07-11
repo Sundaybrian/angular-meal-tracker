@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Meal } from '../../models/meal';
+import { MealService } from './../../services/meal.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-meal-form',
@@ -6,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal-form.component.css']
 })
 export class MealFormComponent implements OnInit {
+  @Output() newFoodOut = new EventEmitter();
+
+  newFood: Meal = {
+    id: 0,
+    name: "",
+    calories: 0,
+    details: ""
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  submitFood(ff) {
+    console.log(ff);
+    this.newFoodOut.emit(this.newFood);
+  }
+
 
 }
