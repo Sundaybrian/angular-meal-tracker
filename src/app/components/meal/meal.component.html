@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <app-meal-form [newFood]="currentMeal" (newFoodOut)="onNewFood($event)"></app-meal-form>
+      <app-meal-form [isEdit]="isEdit" [newFood]="currentMeal" (newFoodOut)="onNewFood($event)"></app-meal-form>
     </div>
     <div class="col-md-8">
 

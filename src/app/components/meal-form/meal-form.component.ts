@@ -19,6 +19,7 @@ export class MealFormComponent implements OnInit {
     calories: 0,
     details: ""
   }
+  @Input() isEdit: boolean;
 
   constructor(private mealService: MealService) { }
 

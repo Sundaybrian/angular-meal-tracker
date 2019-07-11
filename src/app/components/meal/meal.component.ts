@@ -18,6 +18,8 @@ export class MealComponent implements OnInit {
     details: ""
   }
 
+  isEdit: boolean = false;
+
   constructor(private mealService: MealService) { }
 
   ngOnInit() {
@@ -30,6 +32,8 @@ export class MealComponent implements OnInit {
 
   editMeal(meal) {
     this.currentMeal = meal;
+    this.isEdit = true;
+
   }
 
 }
