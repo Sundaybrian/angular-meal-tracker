@@ -31,6 +31,20 @@ export class MealFormComponent implements OnInit {
     this.newFoodOut.emit(this.newFood);
   }
 
+  /* no need for a param since on edit click 
+  the newFood prop holds the data of the current selected post */
+  updateMeal() {
+    this.mealService.updateMeal(this.newFood)
+    this.isEdit = false;
+    this.newFood = {
+      id: 0,
+      name: "",
+      calories: 0,
+      details: ""
+    }
+
+  }
+
 
 
 }
