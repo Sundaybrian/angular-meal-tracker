@@ -1,1 +1,7 @@
-<p>meal-posts works!</p>
+<div class="card card-body mb-2" *ngFor="let meal of _meals">
+  <h3>{{meal.name}}</h3>
+  <ul class="list-group">
+    <li class="list-group-item">{{meal.calories}}</li>
+    <li class="list-group-item">{{meal.details}}</li>
+  </ul>
+</div>
