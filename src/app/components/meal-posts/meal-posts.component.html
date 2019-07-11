@@ -1,7 +1,11 @@
 <div class="card card-body mb-2" *ngFor="let meal of _meals">
   <h3>{{meal.name}}</h3>
-  <ul class="list-group">
+  <ul class="list-group mb-2">
     <li class="list-group-item">{{meal.calories}}</li>
     <li class="list-group-item">{{meal.details}}</li>
   </ul>
+  <div class="card-footer">
+    <button class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i></button>
+    <button class="btn btn-sm btn-light"> <i class="fa fa-pencil"></i></button>
+  </div>
 </div>
