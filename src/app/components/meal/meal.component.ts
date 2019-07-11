@@ -48,6 +48,14 @@ export class MealComponent implements OnInit {
 
   }
 
+  deleteMeal(meal: Meal) {
+    if (confirm("Are You Sure You?")) {
+
+      this.mealService.deleteMeal(meal);
+    }
+
+  }
+
 
 
 }
