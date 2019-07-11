@@ -1,4 +1,6 @@
+import { MealService } from './../../services/meal.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-meal',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mealService: MealService) { }
 
   ngOnInit() {
+  }
+
+  onNewFood(food) {
+    this.mealService.addFood(food);
   }
 
 }

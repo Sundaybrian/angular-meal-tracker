@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <app-meal-form></app-meal-form>
+      <app-meal-form (newFoodOut)="onNewFood($event)"></app-meal-form>
     </div>
     <div class="col-md-8">
       <app-meal-posts></app-meal-posts>
