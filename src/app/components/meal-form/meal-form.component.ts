@@ -13,13 +13,17 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class MealFormComponent implements OnInit {
 
   @Output() newFoodOut = new EventEmitter();
+
   @Input() newFood: Meal = {
     id: 0,
     name: "",
     calories: 0,
     details: ""
   }
+
   @Input() isEdit: boolean;
+
+  @Output() updatedMeal = new EventEmitter();
 
   constructor(private mealService: MealService) { }
 
@@ -34,14 +38,8 @@ export class MealFormComponent implements OnInit {
   /* no need for a param since on edit click 
   the newFood prop holds the data of the current selected post */
   updateMeal() {
-    this.mealService.updateMeal(this.newFood)
     this.isEdit = false;
-    this.newFood = {
-      id: 0,
-      name: "",
-      calories: 0,
-      details: ""
-    }
+    this.updatedMeal.emit(this.newFood);
 
   }
 

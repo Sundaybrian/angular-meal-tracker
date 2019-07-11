@@ -36,4 +36,18 @@ export class MealComponent implements OnInit {
 
   }
 
+  onUpdatedMeal(meal: Meal) {
+    this.mealService.updateMeal(meal)
+    this.isEdit = false;
+    this.currentMeal = {
+      id: 0,
+      name: "",
+      calories: 0,
+      details: ""
+    }
+
+  }
+
+
+
 }
