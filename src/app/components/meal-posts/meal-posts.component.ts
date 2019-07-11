@@ -1,4 +1,4 @@
-import { Meals } from './../../data/meal';
+import { MealService } from './../../services/meal.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -9,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealPostsComponent implements OnInit {
 
-  _meals = Meals;
+  _meals;
 
-  constructor() { }
+  constructor(private mealService: MealService) {
+
+  }
 
   ngOnInit() {
+    this._meals = this.mealService.getMeals();
   }
 
 }

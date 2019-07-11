@@ -1,3 +1,4 @@
+import { MealService } from './services/meal.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +19,7 @@ import { MealPostsComponent } from './components/meal-posts/meal-posts.component
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MealService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
