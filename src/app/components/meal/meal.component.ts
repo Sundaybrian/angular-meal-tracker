@@ -1,5 +1,6 @@
 import { MealService } from './../../services/meal.service';
 import { Component, OnInit } from '@angular/core';
+import { Meal } from '../../models/meal';
 
 
 @Component({
@@ -10,6 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class MealComponent implements OnInit {
 
   _meals;
+  currentMeal: Meal = {
+    id: 0,
+    name: "",
+    calories: 0,
+    details: ""
+  }
 
   constructor(private mealService: MealService) { }
 
@@ -19,6 +26,10 @@ export class MealComponent implements OnInit {
 
   onNewFood(food) {
     this.mealService.addFood(food);
+  }
+
+  editMeal(meal) {
+    this.currentMeal = meal;
   }
 
 }
