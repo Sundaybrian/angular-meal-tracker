@@ -1,6 +1,6 @@
-<form (ngSubmit)="submitFood(foodForm)" #foodForm='ngForm'>
+<form (ngSubmit)="submitFood(foodForm)" #foodForm='ngForm' class="mb-3">
   <div class="form-group">
-    <label for="fname">Food Name{{newFood.name}}</label>
+    <label for="fname">Food Name</label>
     <input type="text" required placeholder="Enter Name of food..." class="form-control" name="fname" #fname='ngModel'
       [(ngModel)]="newFood.name">
   </div>

@@ -9,7 +9,7 @@ import { Meal } from '../../models/meal';
   styleUrls: ['./meal.component.css']
 })
 export class MealComponent implements OnInit {
-
+  showForm: boolean = false;
   _meals;
   currentMeal: Meal = {
     id: 0,
